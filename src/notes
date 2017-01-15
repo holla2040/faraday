@@ -1,0 +1,161 @@
+https://github.com/grbl/grbl/wiki
+http://www.linuxcnc.org/docs/2.5/html/gcode/gcode.html
+
+grbl
+    units are in mm
+    turns is 1 mm, ie 200 steps on spindle, 1 rotation
+
+
+don't run F below 20, Y does start
+
+grbl configuration
+$0=10           (step pulse, usec)
+$1=40           (step idle delay, msec)
+$2=7            (step port invert mask:00000000)
+$3=0            (dir port invert mask:00000110)
+$4=0            (step enable invert, bool)
+$5=0            (limit pins invert, bool)
+$6=0            (probe pin invert, bool)
+$10=31          (status report mask:00000011)
+
+$11=0.010       (junction deviation, mm)
+$12=0.002       (arc tolerance, mm)
+
+$13=1           (report inches, bool)
+
+$20=0           (soft limits, bool)
+$21=0           (hard limits, bool)
+
+$22=0           (homing cycle, bool)
+$23=0           (homing dir invert mask:00000001)
+$24=25.000      (homing feed, mm/min)
+$25=500.000     (homing seek, mm/min)
+$26=250         (homing debounce, msec)
+$27=1.000       (homing pull-off, mm)
+
+$100=100.000    (x, step/mm)
+$101=200.000    (y, step/mm)
+$102=250.000    (z, step/mm)
+
+$110=3000.000   (x max rate, mm/min)
+$111=100.000    (y max rate, mm/min)
+$112=500.000    (z max rate, mm/min)
+
+$120=250.000    (x accel, mm/sec^2)
+$121=25.000     (y accel, mm/sec^2)
+$122=10.000     (z accel, mm/sec^2)
+
+$130=160.000    (x max travel, mm)
+$131=0.000      (y max travel, mm)
+$132=200.000    (z max travel, mm)
+
+G21
+
+reseting x
+    G10 P0 L20 X0
+reseting y
+    G10 P0 L20 Y0
+
+lead screw
+    8mm diameter
+    2mm pitch
+
+    
+
+chilipeppr notes
+yes, absoultey. that was a core design principal of SPJS and ChiliPeppr
+it's how the Texterator works
+it's also how the Laser widget works
+it's also how Frank Herrman's spindle tool changer code works
+the key is to connect to the cnc controller last so it's the green hilited one, which is the primary controller
+all widgets just use the primary controller
+then make your custom widget just talk direct to the secondary port
+there is a sample macro i believe that shows this as well
+i would start there cuz the code is simple
+or steal the code from the Laser widget
+
+
+setup
+keyestudio keyes_cnc
+    switch pin defs in cpu_pin.h
+    remove jumpers from X stepper
+    add 10k pullup resistor from vcc to MS1-3 1/8 step
+    jumper Y stepper, full step
+    dial y driver to 0.7, x driver to 0.100
+    >>> $101 = 200*5.18/(1/0.0393700787) = 40.7874015332
+    there's something wrong here, it's not quite large enough, using 40.802
+
+
+$0=10
+$1=25
+$2=7
+$3=0
+$4=0
+$5=0
+$6=0
+$10=2
+$11=0.000
+$12=0.002
+$13=1
+$20=0
+$21=0
+$22=0
+$23=0
+$24=25.000
+$25=500.000
+$26=250
+$27=1.000
+$30=1000
+$31=0
+$32=1
+$100=400.000
+$101=40.802
+$102=250.000
+$110=3000.000
+$111=6000.000
+$112=500.000
+$120=500.000
+$121=75.000
+$122=10.000
+$130=160.000
+$131=0.000
+$132=200.000
+
+
+g20
+f10
+g90
+g1 x1 y100
+g1 x0 y200
+
+
+
+
+
+net connectivity using 8266
+    download arduino
+    install esp8266 using http://arduino.esp8266.com/stable/package_esp8266com_index.json in the arduino prefs/board manager
+    add websockets library using arduino lib manager
+    install spiffs
+        unzip https://github.com/esp8266/arduino-esp8266fs-plugin/releases into ~/Arduino/tools/
+            should have ~/Arduino/tools/ESP8266FS/tool/esp8266fs.jar
+    see https://www.hackster.io/rayburne/nodemcu-esp8266-remote-temperature-using-websockets-5956c4
+        unzip Display_AP-JS.zip into Arduino
+        compile and upload
+    spiffs
+        [SPIFFS] data   : /home/holla/Arduino/Display_AP-JS/data
+        [SPIFFS] size   : 3052
+        [SPIFFS] page   : 256
+        [SPIFFS] block  : 8192
+        /raphael-2.1.4.min.js.gz
+        /favicon.ico.gz
+        /counter.html
+        /justgage.js.gz
+        /favicon.ico
+        [SPIFFS] upload : /tmp/build4c7a85f7e10d5825d85fe1847a04a752.spiffs/Display_AP-JS.spiffs.bin
+        [SPIFFS] address: 0x100000
+        [SPIFFS] reset  : nodemcu
+        [SPIFFS] port   : /dev/ttyUSB0
+        [SPIFFS] speed  : 115200
+
+
