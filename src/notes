@@ -75,6 +75,9 @@ i would start there cuz the code is simple
 or steal the code from the Laser widget
 
 
+geared stepper ratio is
+    5 + 2/11 = 5.18181818
+
 setup
 keyestudio keyes_cnc
     switch pin defs in cpu_pin.h
@@ -84,7 +87,6 @@ keyestudio keyes_cnc
     dial y driver to 0.7, x driver to 0.100
     >>> $101 = 200*5.18/(1/0.0393700787) = 40.7874015332
     there's something wrong here, it's not quite large enough, using 40.802
-
 
 $0=10
 $1=25
@@ -120,6 +122,8 @@ $122=10.000
 $130=160.000
 $131=0.000
 $132=200.000
+ok
+$N0=G1G20G90F125
 
 
 g20
