@@ -1,0 +1,4 @@
+starting with https://github.com/arkypita/ESP8266-SerialTelnet on esp8266
+
+running nc in char mode and no local echo
+stty -icanon -echo && nc 192.168.0.159 23 
