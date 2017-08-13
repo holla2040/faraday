@@ -3436,12 +3436,60 @@ Proto</text>
 <text x="21.844" y="54.61" size="1.016" layer="97" rot="R180" align="center">ROTARY
 ENCODER</text>
 <text x="226.06" y="210.82" size="1.778" layer="97" align="top-left">done lcd2004 20x4
-done wifi-serial
-     wifi-serial-udp
+done wifi-serial-http-tcp
+     wifi-serial-http-websockets
      parser
      display status report data
 
 </text>
+<wire x1="180.34" y1="58.42" x2="208.28" y2="58.42" width="0.1524" layer="97"/>
+<wire x1="208.28" y1="58.42" x2="208.28" y2="55.88" width="0.1524" layer="97"/>
+<wire x1="208.28" y1="55.88" x2="208.28" y2="53.34" width="0.1524" layer="97"/>
+<wire x1="208.28" y1="53.34" x2="180.34" y2="53.34" width="0.1524" layer="97"/>
+<wire x1="180.34" y1="53.34" x2="180.34" y2="58.42" width="0.1524" layer="97"/>
+<text x="194.31" y="55.88" size="1.778" layer="97" align="center">faradayConsole.py</text>
+<wire x1="180.34" y1="50.8" x2="208.28" y2="50.8" width="0.1524" layer="97"/>
+<wire x1="208.28" y1="50.8" x2="208.28" y2="49.53" width="0.1524" layer="97"/>
+<wire x1="208.28" y1="49.53" x2="208.28" y2="46.99" width="0.1524" layer="97"/>
+<wire x1="208.28" y1="46.99" x2="208.28" y2="45.72" width="0.1524" layer="97"/>
+<wire x1="208.28" y1="45.72" x2="180.34" y2="45.72" width="0.1524" layer="97"/>
+<wire x1="180.34" y1="45.72" x2="180.34" y2="50.8" width="0.1524" layer="97"/>
+<text x="194.31" y="48.26" size="1.778" layer="97" align="center">browserDRO</text>
+<wire x1="218.44" y1="58.42" x2="231.14" y2="58.42" width="0.1524" layer="97"/>
+<wire x1="231.14" y1="58.42" x2="246.38" y2="58.42" width="0.1524" layer="97"/>
+<wire x1="246.38" y1="58.42" x2="246.38" y2="53.34" width="0.1524" layer="97"/>
+<wire x1="246.38" y1="53.34" x2="246.38" y2="45.72" width="0.1524" layer="97"/>
+<wire x1="246.38" y1="45.72" x2="218.44" y2="45.72" width="0.1524" layer="97"/>
+<wire x1="218.44" y1="45.72" x2="218.44" y2="46.99" width="0.1524" layer="97"/>
+<text x="232.664" y="52.07" size="1.778" layer="97" align="center">Faraday
+Gateway</text>
+<wire x1="218.44" y1="46.99" x2="218.44" y2="49.53" width="0.1524" layer="97"/>
+<wire x1="218.44" y1="49.53" x2="218.44" y2="55.88" width="0.1524" layer="97"/>
+<wire x1="218.44" y1="55.88" x2="218.44" y2="58.42" width="0.1524" layer="97"/>
+<wire x1="208.28" y1="55.88" x2="218.44" y2="55.88" width="0.1524" layer="97"/>
+<wire x1="208.28" y1="49.53" x2="218.44" y2="49.53" width="0.1524" layer="97"/>
+<wire x1="208.28" y1="46.99" x2="218.44" y2="46.99" width="0.1524" layer="97"/>
+<text x="214.122" y="56.134" size="1.778" layer="97" align="bottom-center">TCP</text>
+<text x="213.868" y="49.784" size="1.778" layer="97" align="bottom-center">HTTP</text>
+<text x="213.868" y="47.244" size="1.778" layer="97" align="bottom-center">WS</text>
+<wire x1="218.44" y1="68.58" x2="246.38" y2="68.58" width="0.1524" layer="97"/>
+<wire x1="246.38" y1="68.58" x2="246.38" y2="66.04" width="0.1524" layer="97"/>
+<wire x1="246.38" y1="63.5" x2="231.14" y2="63.5" width="0.1524" layer="97"/>
+<wire x1="231.14" y1="63.5" x2="218.44" y2="63.5" width="0.1524" layer="97"/>
+<wire x1="218.44" y1="63.5" x2="218.44" y2="68.58" width="0.1524" layer="97"/>
+<text x="232.41" y="66.04" size="1.778" layer="97" align="center">LCD Display 20x4</text>
+<wire x1="246.38" y1="63.5" x2="246.38" y2="66.04" width="0.1524" layer="97"/>
+<wire x1="231.14" y1="63.5" x2="231.14" y2="58.42" width="0.1524" layer="97"/>
+<wire x1="256.54" y1="55.88" x2="266.7" y2="55.88" width="0.1524" layer="97"/>
+<wire x1="266.7" y1="50.8" x2="261.62" y2="50.8" width="0.1524" layer="97"/>
+<wire x1="261.62" y1="50.8" x2="256.54" y2="50.8" width="0.1524" layer="97"/>
+<wire x1="256.54" y1="50.8" x2="256.54" y2="53.34" width="0.1524" layer="97"/>
+<text x="262.128" y="53.594" size="1.778" layer="97" align="center">GRBL</text>
+<wire x1="256.54" y1="53.34" x2="256.54" y2="55.88" width="0.1524" layer="97"/>
+<wire x1="266.7" y1="55.88" x2="266.7" y2="50.8" width="0.1524" layer="97"/>
+<wire x1="246.38" y1="53.34" x2="256.54" y2="53.34" width="0.1524" layer="97"/>
+<text x="247.65" y="53.594" size="1.778" layer="97">Serial</text>
+<text x="230.886" y="58.928" size="1.778" layer="97" rot="R90">I2C</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
