@@ -1,0 +1,52 @@
+
+./Machine header
+Idle     POS 0.0000  TURNS 0.00    OVERRIDE   0.0%  AWG 22/0.027" >> L  21:29:49
+G1 G54 G17 G20 G90 G94 M5 M9 T0 F125.0 S0   linear  inch  absolute 
+
+
+https://github.com/gnea/grbl/wiki/Grbl-v1.1-Interface
+
+
+
+
+on display candidates
+. state
+    Idle, Run, Hold, Jog, Alarm, Door, Check, Home, Sleep (could have : and substate
+turn/turns
+layer/layers
+. override
+. tension
+. direction
+. which spool
+. message
+
+
+
+to do be determined
+thottle functionality
+manual move with sync, tape, x
+tension control loop 
+    angle calculation
+
+
+    01234567890123456789
+0   / state_ ooo  0000.0   heartbeat state over turn
+1   L 0.000    >>>  0000     LRspool tension direction turns per winding  
+2   message 2
+3   message 3
+
+
+
+https://www.shapeoko.com/wiki/index.php/G-Code
+G1   move        G1  linear
+G54  coordinate  G54 first WCS
+G17  plane       G17 XY
+G20  units       G20 inches
+G90  positioning G90 absolute/incremental
+G94  feed rate   G94 inches
+M5   spindle     M5  stop
+M9   coolant     M9  off
+T0   tool        T0  tool0
+F125.0
+S0
+   linear  inch  absolute 

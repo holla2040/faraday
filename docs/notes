@@ -2,3 +2,14 @@ starting with https://github.com/arkypita/ESP8266-SerialTelnet on esp8266
 
 running nc in char mode and no local echo
 stty -icanon -echo && nc 192.168.0.159 23 
+
+https://learn.sparkfun.com/tutorials/load-cell-amplifier-hx711-breakout-hookup-guide
+The four wires coming out from the wheatstone bridge on the load cell are usually:
+    Excitation+ (E+) or VCC is red
+    Excitation- (E-) or ground is black.
+    Output+ (O+), Signal+ (S+)+ or Amplifier+ (A+) is white
+    O-, S-, or A- is green or blue
+
+
+https://github.com/bogde/HX711
+https://github.com/sparkfun/HX711-Load-Cell-Amplifier

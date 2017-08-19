@@ -2204,8 +2204,9 @@ Source: http://www.molex.com</description>
 <pin name="TX" x="20.32" y="7.62" visible="pin" length="short" rot="R180"/>
 <text x="-7.62" y="10.668" size="1.778" layer="95">&gt;Name</text>
 <text x="-7.62" y="-14.986" size="1.778" layer="96">&gt;Value</text>
-<text x="17.78" y="-9.144" size="1.27" layer="97" ratio="10" rot="R180">WEMOS
-D1 MINI</text>
+<text x="17.526" y="-12.192" size="1.27" layer="97" ratio="10" align="bottom-right">WEMOS
+D1 MINI
+ESP8266</text>
 </symbol>
 <symbol name="POTENTIOMETER">
 <wire x1="0" y1="-1.27" x2="-1.016" y2="-0.889" width="0.1524" layer="94"/>
@@ -3440,6 +3441,12 @@ done wifi-serial-http-tcp
      wifi-serial-http-websockets
      parser
      display status report data
+     load cell query
+     tension driver
+     grbl status parser
+     rotary encoder interrupts
+     comment parser
+     
 
 </text>
 <wire x1="180.34" y1="58.42" x2="208.28" y2="58.42" width="0.1524" layer="97"/>
@@ -4403,6 +4410,15 @@ Gateway</text>
 <pinref part="J17" gate="G$1" pin="4"/>
 <wire x1="157.48" y1="114.3" x2="160.02" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="157.48" y1="132.08" x2="157.48" y2="114.3" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$9" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="COOLANT_ENABLE"/>
+<wire x1="81.28" y1="114.3" x2="71.12" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="114.3" x2="71.12" y2="76.2" width="0.1524" layer="91"/>
+<pinref part="U2" gate="G$1" pin="12/MISO"/>
+<wire x1="71.12" y1="76.2" x2="104.14" y2="76.2" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
